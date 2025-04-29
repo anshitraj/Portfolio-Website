@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 20% 5%;
+    --foreground: 0 0% 98%;
+    --card: 260 20% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 260 20% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 260 80% 70%;
+    --primary-foreground: 260 5.9% 10%;
+    --secondary: 260 20% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 260 20% 12%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 260 20% 12%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 12%;
+    --input: 260 20% 12%;
+    --ring: 260 80% 70%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-purple-500/10 selection:text-purple-400;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased font-inter;
+    background-image: radial-gradient(circle at center, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-500/20 rounded-full hover:bg-purple-500/30 transition-colors;
+  }
+}
+
+@layer components {
+  .dashboard-card {
+    @apply bg-card/50 backdrop-blur-xl border border-purple-500/10 rounded-xl transition-all duration-300
+    hover:border-purple-500/20 hover:bg-card/80 hover:shadow-lg hover:shadow-purple-500/5;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .section-heading {
+    @apply text-2xl font-bold mb-6 flex items-center gap-3 text-gradient;
+  }
+
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-xl border border-purple-500/10 rounded-xl;
+  }
+}
